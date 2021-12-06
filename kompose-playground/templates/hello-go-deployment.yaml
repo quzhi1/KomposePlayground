@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-go
+spec:
+  selector:
+    matchLabels:
+      app: hello-go
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: hello-go
+    spec:
+      containers:
+        - name: hello-go
+          image: hello-go
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8090

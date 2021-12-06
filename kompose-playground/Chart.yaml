@@ -1,0 +1,8 @@
+name: kompose-playground
+description: A generated Helm Chart for kompose-playground from Skippbox Kompose
+version: 0.0.1
+apiVersion: v1
+keywords:
+  - kompose-playground
+# sources:
+# home:
