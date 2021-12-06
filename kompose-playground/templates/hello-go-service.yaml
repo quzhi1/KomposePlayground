@@ -5,15 +5,15 @@ metadata:
     kompose.service.type: LoadBalancer
   creationTimestamp: null
   labels:
-    io.kompose.service: hello-go
-  name: hello-go
+    io.kompose.service: hello-go-tcp
+  name: hello-go-tcp
 spec:
   ports:
     - name: "8090"
       port: 8090
       targetPort: 8090
   selector:
-    io.kompose.service: hello-go
+    app: hello-go
   type: LoadBalancer
 status:
   loadBalancer: {}
