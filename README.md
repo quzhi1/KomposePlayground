@@ -1,4 +1,13 @@
 # KomposePlayground
+
+## Prerequisite
+- Docker
+- Minikube
+- Helm
+- **Put `eval $(minikube docker-env)` to your .zshrc**
+- **Put the output of `minikube docker-env` to your your .zshrc as well**
+
+## Play
 1. Run minikube
 ```bash
 minikube start
@@ -7,24 +16,15 @@ minikube start
 ```bash
 docker build . -t hello-go
 ```
-3. Add local image to minikube:
-```bash
-minikube image load hello-go
-```
-4. Run helm charts:
+3. Run helm charts:
 ```bash
 helm install kompose-playground kompose-playground
 ```
-5. Check readiness
+4. Check readiness
 ```bash
 minikube dashboard
 ```
-7. Make changes in Go, then rebuild image with step 3.
-8. Load image with step 4.
-9. Upgrade helm chart
-```bash
-helm upgrade kompose-playground kompose-playground
-```
+5. Make changes in Go, then rebuild image with step 3.
 
 ## Access url
 1. Run tunnel (Doesn't matter if there is no response)

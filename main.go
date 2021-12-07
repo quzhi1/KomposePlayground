@@ -11,5 +11,5 @@ func main() {
 }
 
 func hello(w http.ResponseWriter, _ *http.Request) {
-	fmt.Fprintf(w, "Hello word (changed)\n")
+	fmt.Fprintf(w, "Hello word 12/07/2021 changed\n")
 }
