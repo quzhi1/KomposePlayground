@@ -4,7 +4,7 @@ WORKDIR /opt/app
 
 ADD . /opt/app
 
-EXPOSE 80
+EXPOSE 8090
 
 RUN go test
 

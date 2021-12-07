@@ -32,8 +32,6 @@ helm upgrade kompose-playground kompose-playground
 minikube tunnel --cleanup
 ```
 
-**I am not able to access hello-go. Not sure why.**
-
 ## ssh into pod
 ```bash
 kubectl exec --stdin --tty <pod-name> -- /bin/bash
