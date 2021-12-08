@@ -56,7 +56,7 @@ kompose convert -c --with-kompose-annotation=false --out kompose-playground
 Now it is running!
 
 
-Following are copy pasted from https://github.com/andrew-jung/gcp-pubsub-emulator
+Below are copy pasted from https://github.com/andrew-jung/gcp-pubsub-emulator
 - Create a topic: PUT http://localhost:8085/v1/projects/test/topics/cats where cats is a new topic name and test is the project.
 - Get project topics GET http://localhost:8085/v1/projects/test/topics
 - Subscribe to topic: PUT http://localhost:8085/v1/projects/test/subscriptions/test-sub where test-sub is the subscription name
@@ -67,10 +67,12 @@ Payload:
 - Publish message to topic: POST http://localhost:8085/v1/projects/test/topics/cats:publish
 Payload:
 ```json
-{"messages": [{"data": "cats rule"}]}
+{"messages": [{"data": "Q2F0IHJ1bGVzIQo="}]}
 ```
+The message is a base 64 encoded string. Original string is `Cat rules!`
 - Pull messages from topic: POST localhost:8085/v1/projects/test/subscriptions/test-sub:pull
 Payload:
 ```json
-{"max_messages": 1}
+{"max_messages": 10}
 ```
+Returned messages are base64 encoded.
