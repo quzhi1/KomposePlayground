@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pub-sub-emulator
+spec:
+  selector:
+    matchLabels:
+      app: pub-sub-emulator
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: pub-sub-emulator
+    spec:
+      containers:
+        - name: pub-sub-emulator
+          image: gcppubsub:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8085

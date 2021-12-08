@@ -1,0 +1,6 @@
+name: pub-sub-emulator
+description: Pub sub emulator
+version: 0.0.1
+apiVersion: v1
+keywords:
+  - pub-sub-emulator
