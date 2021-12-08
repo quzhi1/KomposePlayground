@@ -67,10 +67,10 @@ Payload:
 - Publish message to topic: POST http://localhost:8085/v1/projects/test/topics/cats:publish
 Payload:
 ```json
-​{"messages": [{"data": "cats rule"}]}
+{"messages": [{"data": "cats rule"}]}
 ```
 - Pull messages from topic: POST localhost:8085/v1/projects/test/subscriptions/test-sub:pull
 Payload:
 ```json
-​{"max_messages": 1}
+{"max_messages": 1}
 ```
