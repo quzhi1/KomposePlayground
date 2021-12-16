@@ -18,7 +18,7 @@ docker build . -t hello-go
 ```
 3. Run helm charts:
 ```bash
-helm install kompose-playground kompose-playground
+helm upgrade --install kompose-playground kompose-playground
 ```
 4. Check readiness
 ```bash

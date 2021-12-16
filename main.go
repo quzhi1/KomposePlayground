@@ -4,7 +4,9 @@ import (
 	"context"
 	"fmt"
 	"net/http"
+	"os"
 
+	"cloud.google.com/go/pubsub"
 	"github.com/go-redis/redis/v8"
 )
 
@@ -17,6 +19,10 @@ func main() {
 }
 
 func hello(w http.ResponseWriter, _ *http.Request) {
+	// Init
+	os.Setenv("PUBSUB_EMULATOR_HOST", "pub-sub-emulator.default.svc.cluster.local:8085")
+
+	// Redis stuff
 	opts := redis.Options{
 		Addr:     "redis-master.default.svc.cluster.local:6379",
 		Password: "",
@@ -32,6 +38,21 @@ func hello(w http.ResponseWriter, _ *http.Request) {
 	if err != nil {
 		panic(err)
 	}
+	fmt.Fprint(w, "Value from redis: "+val)
 
-	fmt.Fprint(w, val)
+	// PubSub stuff
+	ctx := context.Background()
+	client, err := pubsub.NewClient(ctx, "my-project")
+	if err != nil {
+		panic(err)
+	}
+	topic, err := client.CreateTopic(ctx, "my-topic")
+	if err != nil {
+		panic(err)
+	}
+	fmt.Fprint(w, "Topic: "+topic.String())
+	err = topic.Delete(ctx)
+	if err != nil {
+		panic(err)
+	}
 }
