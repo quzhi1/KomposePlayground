@@ -6,6 +6,6 @@ ADD . /opt/app
 
 EXPOSE 8090
 
-RUN go test
+RUN go build -mod vendor -o bin/hello-go main.go
 
-CMD ["go", "run", "main.go"]
+CMD ["bin/hello-go"]

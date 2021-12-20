@@ -19,10 +19,12 @@ func main() {
 }
 
 func hello(w http.ResponseWriter, _ *http.Request) {
-	// Init
-	os.Setenv("PUBSUB_EMULATOR_HOST", "pub-sub-emulator.default.svc.cluster.local:8085")
+	fmt.Fprint(w, "Hello")
+	// checkRedis(w)
+	// checkPubSub(w)
+}
 
-	// Redis stuff
+func checkRedis(w http.ResponseWriter) {
 	opts := redis.Options{
 		Addr:     "redis-master.default.svc.cluster.local:6379",
 		Password: "",
@@ -39,8 +41,10 @@ func hello(w http.ResponseWriter, _ *http.Request) {
 		panic(err)
 	}
 	fmt.Fprint(w, "Value from redis: "+val)
+}
 
-	// PubSub stuff
+func checkPubSub(w http.ResponseWriter) {
+	os.Setenv("PUBSUB_EMULATOR_HOST", "pub-sub-emulator.default.svc.cluster.local:8085")
 	ctx := context.Background()
 	client, err := pubsub.NewClient(ctx, "my-project")
 	if err != nil {
