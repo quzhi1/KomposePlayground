@@ -4,33 +4,33 @@
 - Docker
 - Minikube
 - Helm
-- **Put `eval $(minikube docker-env)` to your .zshrc**
-- **Put the output of `minikube docker-env` to your your .zshrc as well**
+- **Put the following into to your .zshrc**
+```bash
+# Minikube
+eval $(minikube docker-env)
+```
 
 ## Play
 1. Run minikube
 ```bash
 minikube start
 ```
-2. Build docker image locally:
+2. Run tilt
 ```bash
-docker build . -t hello-go
+tilt up
 ```
-3. Run helm charts:
-```bash
-helm upgrade --install kompose-playground kompose-playground
-```
-4. Check readiness
-```bash
-minikube dashboard
-```
-5. Make changes in Go, then rebuild image with step 3.
-6. Delete the old pod to see your change.
+
+Try to make change in `main.go`, you will see the change in real time!
 
 ## Access url
 1. Run tunnel (Doesn't matter if there is no response)
 ```bash
 minikube tunnel --cleanup
+```
+
+## Access k8s dashboard
+```bash
+minikube dashboard
 ```
 
 ## ssh into pod

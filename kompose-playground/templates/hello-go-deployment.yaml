@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: hello-go
-          image: hello-go
+          image: hello-go-image
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8090

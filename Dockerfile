@@ -2,10 +2,11 @@ FROM golang:latest
 
 WORKDIR /opt/app
 
-ADD . /opt/app
+# ADD . /opt/app
+ADD ./bin /opt/app/bin
 
 EXPOSE 8090
 
-RUN go build -mod vendor -o bin/hello-go main.go
+# RUN go build -mod vendor -o bin/hello-go main.go
 
-CMD ["bin/hello-go"]
+ENTRYPOINT bin/hello-go

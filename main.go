@@ -19,7 +19,7 @@ func main() {
 }
 
 func hello(w http.ResponseWriter, _ *http.Request) {
-	fmt.Fprint(w, "Hello")
+	fmt.Fprint(w, "Hello world")
 	// checkRedis(w)
 	// checkPubSub(w)
 }
