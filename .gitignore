@@ -14,3 +14,6 @@ bin/
 
 # Tilt modules
 tilt_modules/
+
+# Mac
+/**/.DS_Store
