@@ -18,3 +18,11 @@ spec:
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8090
+      #     volumeMounts:
+      #       - name: example-volume
+      #         mountPath: /opt/app/file_to_mount.txt
+      # volumes:
+      #   - name: example-volume
+      #     hostPath:
+      #       path: /Users/zhi.q@nylas.com/KomposePlayground/file_to_mount.txt
+      #       type: File
