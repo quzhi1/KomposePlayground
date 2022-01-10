@@ -30,6 +30,6 @@ k8s_yaml(helm('./kompose-playground'))
 # Copy local file to pod
 local_resource(
   'mount-file',
-  'kubectl cp file_to_mount.txt $(eval kubectl get pods | grep hello-go | cut -d' ' -f1):/opt/app/file_to_mount.txt',
+  'kubectl cp file_to_mount.txt $(eval kubectl get pods | grep hello-go | cut -d\' \' -f1):/opt/app/file_to_mount.txt',
   resource_deps=['hello-go'],
 )
