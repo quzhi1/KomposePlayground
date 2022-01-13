@@ -131,3 +131,10 @@ To uninstall the chart:
 ```bash
   helm delete kompose-playground
 ```
+
+## Updating Helm charts
+```bash
+mkdir -p charts
+helm package kompose-playground --destination charts/
+helm repo index charts
+```
