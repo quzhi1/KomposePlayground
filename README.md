@@ -6,6 +6,7 @@
 - Helm
 - Tilt
 - **Put the following into to your .zshrc**
+
 ```bash
 # Minikube
 eval $(minikube docker-env)
