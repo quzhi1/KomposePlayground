@@ -4,6 +4,7 @@
 - Docker
 - Minikube
 - Helm
+- Tilt
 - **Put the following into to your .zshrc**
 ```bash
 # Minikube
@@ -102,3 +103,24 @@ Payload:
 {"max_messages": 10}
 ```
 Returned messages are base64 encoded.
+
+## Helm
+
+[Helm](https://helm.sh) must be installed to use the charts.  Please refer to
+Helm's [documentation](https://helm.sh/docs) to get started.
+
+Once Helm has been set up correctly, add the repo as follows:
+
+  helm repo add kompose-playground https://quzhi1.github.io/helm-charts
+
+If you had already added this repo earlier, run `helm repo update` to retrieve
+the latest versions of the packages.  You can then run `helm search repo
+kompose-playground` to see the charts.
+
+To install the kompose-playground chart:
+
+    helm install kompose-playground kompose-playground/kompose-playground
+
+To uninstall the chart:
+
+    helm delete kompose-playground
