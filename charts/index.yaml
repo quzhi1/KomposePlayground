@@ -9,6 +9,6 @@ entries:
     - kompose-playground
     name: kompose-playground
     urls:
-    - kompose-playground-0.0.1.tgz
+    - https://quzhi1.github.io/KomposePlayground/charts/kompose-playground-0.0.1.tgz
     version: 0.0.1
 generated: "2022-01-12T18:02:32.78015-08:00"

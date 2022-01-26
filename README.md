@@ -139,5 +139,7 @@ helm package kompose-playground --destination charts/
 ```
 
 ## Manually release chart
+```bash
 cr upload --owner=quzhi1 --git-repo=KomposePlayground --token=$GITHUB_ACCESS_TOKEN --package-path=charts --skip-existing=false
 cr index --owner quzhi1 -r KomposePlayground --index-path charts/index.yaml --package-path charts/ --token $GITHUB_ACCESS_TOKEN --charts-repo https://quzhi1.github.io/KomposePlayground/charts
+```
